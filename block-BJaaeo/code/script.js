@@ -1,28 +1,32 @@
 let display = document.querySelector(".display");
 
-let h2 = document.querySelector("h2");
+let initialValue = 0;
 
-console.log(display);
-
-let add = document.querySelector(".add");
-
-add.addEventListener("click", function(){
-  
-
-})
+display.innerText = initialValue;
 
 
-let numbers = document.querySelectorAll(".keypad")
+let allButtons = document.querySelectorAll(".btn");
 
-console.log(numbers)
+console.log(allButtons);
 
-numbers.forEach((num)=>{
+function handleBtnClick(event){
+    if( event.target.classList.contains("equal")){
+        display.innerText = eval(display.innerText);
+        return;
+    } if (event.target.classList.contains("clear")){
+        display.innerText = initialValue;
+        return;
+    }if(display.innerText == initialValue){
+        display.innerText = event.target.innerText
+    }else{
+        display.innerText += event.target.innerText
+    }
+    
+}
 
-    num.addEventListener("click", function(event){
-        let text = event.target
 
-        
-    })
+allButtons.forEach((btn) =>{
 
+    btn.addEventListener("click" , handleBtnClick)
 
 })
