@@ -1,0 +1,103 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*common styling*/
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding-bottom: 90px;
+    box-shadow: 2px 2px 20px grey;
+   
+}
+
+.padding{
+    padding: 20px;
+}
+
+.margin{
+    margin-top: 50px;
+}
+
+
+.box h1{
+    font-size: 30px;
+    font-weight: 700;
+    padding: 40px;
+    color: white;
+    background-color: rgb(30,144,255);
+}
+
+
+.user h2 , .computer h2{
+    font-size: 30px;
+    padding: 30px;
+}
+
+#symbol{
+    font-size: 60px;
+    margin-left: 100px;
+    color: blue;
+}
+
+.computer #symbol{
+    color: red;
+}
+
+
+#refresh{
+    font-size: 40px;
+    padding: 40px;
+    padding-left: 60px;
+}
