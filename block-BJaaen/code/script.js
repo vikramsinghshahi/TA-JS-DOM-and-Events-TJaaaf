@@ -35,7 +35,7 @@ let userSelected= {} , computerSelected = {};
 function getWinner(user ,computer){
 //tie
      if( user.name === computer.name){
-         result.innerText = "It's a tie";
+         result.innerText = "It' s a tie";
      } else if(user.beats ===computer.name){
          result.innerText = "You won" 
 
