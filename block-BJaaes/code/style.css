@@ -48,14 +48,16 @@ body {
 }
 
 button {
-  padding: 0.5rem;
+  padding: 0.6rem;
+  font-size: 20px;
+  background-color: rgb(177, 130, 130);
 }
 
 body {
   margin-top: 2rem;
 }
 
-input[type='text'] {
+input[type='text'], input[type = "password"] {
   padding: 0.5rem 1rem;
   border: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -90,4 +92,27 @@ input[type='text'] {
 }
 .terms {
   display: inline-block;
+}
+
+small{
+  color: rgb(233, 116, 116);
+}
+
+.form-control.success input{
+  border-color: #2ecc71;
+}
+
+.form-control.error input{
+  border-color: #e74c3c;
+}
+
+.form-control.success i.fa-check-circle{
+   color: #2ecc71;
+   visibility: visible;
+}
+
+
+.form-control.error i.fa-exclamation-circle{
+  color: #e74c3c;
+  visibility: visible;
 }
