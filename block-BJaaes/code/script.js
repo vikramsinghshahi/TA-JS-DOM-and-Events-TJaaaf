@@ -86,8 +86,9 @@ function handleSubmit(event){
             errorMessages.phone = "Phone numbers can only be a number" ;
 
             displayError("phone");
+
         } else if( phone.length < 7){
-            errorMessages.email = "Length of phone number can't be less than 7" ;
+            errorMessages.phone = "Length of phone number can't be less than 7" ;
             displayError("phone");
         }
         else {
@@ -97,13 +98,13 @@ function handleSubmit(event){
 //8. Password and confirm password must be same.
         if ( password !== passwordCheck){
             errorMessages.password = " Password and confirm password must be same" ;
-            errorMessages[`password-check`] = 
+            errorMessages["password-check"] = 
             "Password and confirm password must be same" ;
 
             displayError("password");
             displayError("password-check");
         } else{
-
+            
             displaySuccess("password");
             displaySuccess("password-check");
             
