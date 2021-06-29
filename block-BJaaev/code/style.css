@@ -47,3 +47,72 @@ table {
     border-spacing: 0;
 }
 
+/*common styling*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.margin{
+    margin-top: 50px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: aliceblue;
+
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}
+
+input[type = "text"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    box-shadow: 1px 1px 10px grey;
+    border: none;
+    margin: 20px 0;
+
+}
+
+li{
+    margin-bottom: 20px;
+    border-bottom: 1px dashed black;
+    display: flex;
+    align-items: center;
+    
+}
+
+input[type=checkbox]{
+    font-size: 20px;
+    margin : 10px 0;
+    margin-right: 20px;
+    width:20px;
+    height: 20px;
+   
+}
+
+p{
+    font-size: 24px;
+  
+}
+
+span{
+    font-size: 25px;
+    color: red;
+    font-weight: 600;
+    margin-left: 300px;
+}
+
+span:hover{
+    cursor: pointer;
+}
