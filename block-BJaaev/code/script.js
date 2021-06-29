@@ -5,7 +5,24 @@ let inputText = document.querySelector("#text");
 
 let root = document.querySelector("ul");
 
-let allTodos = JSON.parse(localStorage.getItem("todos")) ||  [];
+let all = document.querySelector(".all");
+let active = document.querySelector(".active");
+let completed =document.querySelector(".completed");
+
+let clear = document.querySelector(".clear");
+
+
+
+let activeButton = "all";
+
+//let allTodos = JSON.parse(localStorage.getItem("todos")) ||  [];
+
+let allTodos = localStorage.getItem("allTodos")
+               ? JSON.parse(localStorage.getItem("allTodos"))
+               :[]; //{ name: "learning Dom" , isDone : true},
+                 //{ name: "basketball" , isDone : false},
+                 //{ name: "cricket" , isDone : true},
+                
 
 function handleInput(event){
     if( event.keyCode ===13 && event.target.value !== ""){
@@ -17,11 +34,12 @@ function handleInput(event){
 
         event.target.value ="";
 
-        createUI(allTodos , root);
+        createUI();
+
+        localStorage.setItem("allTodos", JSON.stringify(allTodos));
     }
 
-    localStorage.setItem(
-        "todos", JSON.stringify(allTodos));
+   // localStorage.setItem("allTodos", JSON.stringify(allTodos));
 }
 
 
@@ -30,9 +48,9 @@ function handleDelete(event){
 
      allTodos.splice(id , 1);
 
-     localStorage.setItem("todos", JSON.stringify(allTodos));
+     localStorage.setItem("allTodos", JSON.stringify(allTodos));
 
-     createUI(allTodos , root);
+     createUI();
 
 }
 
@@ -41,14 +59,14 @@ function handleToggle(event){
 
     allTodos[id].isDone = !allTodos[id].isDone;
 
-    localStorage.setItem("todos", JSON.stringify(allTodos));
+    localStorage.setItem("allTodos", JSON.stringify(allTodos));
 
-    createUI(allTodos , root);
+    createUI();
 }
 
-function createUI(data , rootElm){
+function createUI( data = allTodos){
 
-    rootElm.innerHTML ="";
+    root.innerHTML ="";
 
     data.forEach((todo , index) =>{
         let li = document.createElement("li");
@@ -75,15 +93,79 @@ function createUI(data , rootElm){
     
         li.append( input , p , span);
     
-        rootElm.append(li);
+        root.append(li);
 
     });
 
 
 };
 
-createUI( allTodos , root);
+createUI();
+
+//all.classList.add("selected");
+
+clear.addEventListener("click" ,() =>{
+  allTodos =  allTodos.filter(todo => !todo.isDone);
+
+  createUI();
+  
+  localStorage.setItem("allTodos", JSON.stringify(allTodos));
+
+});
+
+
+active.addEventListener("click" , ()=>{
+      let notCompleted =  allTodos.filter((todo) => !todo.isDone);
+      createUI(notCompleted);
+
+      activeButton = "active";
+
+      updateActiveButton();
+
+});
+
+
+completed.addEventListener("click" , ()=>{
+    let completed =  allTodos.filter((todo) => todo.isDone);
+    createUI(completed);
+
+    activeButton = "completed";
+
+    updateActiveButton();
+
+});
+
+
+all.addEventListener("click" , ()=>{
+    createUI();
+
+    activeButton = "all";
+
+    updateActiveButton();
+
+});
+
+
+function updateActiveButton(btn = activeButton){
+    all.classList.remove("selected");
+    active.classList.remove("selected");
+    completed.classList.remove("selected");
+
+    if(btn === "all"){
+        all.classList.add("selected")
+    } if(btn === "active"){
+        active.classList.add("selected")
+    } if(btn === "completed"){
+        completed.classList.add("selected")
+    }
+
+}
+
+updateActiveButton();
+
 inputText.addEventListener("keyup" , handleInput);
+
+
 
 };
 
