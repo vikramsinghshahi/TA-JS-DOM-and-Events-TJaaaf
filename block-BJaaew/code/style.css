@@ -85,22 +85,86 @@ input[type = text]{
   border: none;
 }
 
-.all-button{
+.tags{
+  max-width: 1350px;
+  margin: 0 auto;
   text-align: center;
   padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-button{
-  margin-right: 10px;
-  padding:5px 25px;
+.tags li{
+  width: 110px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   background-color: black;
   color: white;
-  border-radius: 3px;
-  font-size: 15px;
-  border: none;
+  border-radius: 7px;
+  font-size: 18px;
+  
 }
 
-button:hover{
+.tags li:hover{
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+
+
+.cards{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+
+}
+
+.cards li{
+  text-align: center;
+  margin-top: 60px;
+  box-shadow: 2px 2px 10px grey;
+  background-color: rgb(180,216,223);
+  padding: 5px;
+
+}
+
+.cards li img{
+ border-radius: 50%;
+}
+
+.cards li h2{
+  font-size: 22px;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.cards li p{
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.cards li button{
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+
+.flex-30{
+  flex: 0 1 30%;
+}
+
+
+.active{
   background-color: white;
   color: black;
   border: 1px solid black;
