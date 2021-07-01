@@ -1,0 +1,149 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*common styling*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.margin{
+    margin-top: 50px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    padding: 20px;
+    border: 1px solid grey;
+
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+    padding: 20px;
+}
+
+input[type = "text"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    box-shadow: 1px 1px 10px grey;
+    border: none;
+    margin: 20px 0;
+
+}
+
+li{
+    margin-bottom: 20px;
+    border-bottom: 1px dashed black;
+    display: flex;
+    align-items: center;
+    
+}
+
+input[type=checkbox]{
+    font-size: 20px;
+    margin : 10px 0;
+    margin-right: 20px;
+    width:20px;
+    height: 20px;
+   
+}
+
+p{
+    font-size: 24px;
+  
+}
+
+span{
+    font-size: 25px;
+    color: red;
+    font-weight: 600;
+    margin-left: 300px;
+}
+
+span:hover{
+    cursor: pointer;
+}
+
+
+footer{
+    background-color: rgb(167, 64, 45);
+    padding: 15px;
+}
+button{
+    display: inline-block;
+    font-size: 17px;
+    padding: 5px;
+    margin-right: 20px;
+    background-color: rgb(90, 87, 87);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.selected{
+    background-color: white;
+    color: black;
+}
